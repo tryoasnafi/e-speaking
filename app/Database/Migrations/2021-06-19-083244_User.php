@@ -42,6 +42,7 @@ class User extends Migration
 		]);
 
 		$this->forge->addKey('id', true);
+		$this->forge->addUniqueKey('email');
 		$this->forge->createTable('users');
 	}
 
