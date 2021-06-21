@@ -40,4 +40,20 @@ class Validation
 	//--------------------------------------------------------------------
 	// Rules
 	//--------------------------------------------------------------------
+	public $register = [
+		'name' => 'required',
+		'email' => [
+			'rules' => 'required|valid_email|is_unique[users.email]',
+			'errors' => [
+				'is_unique' => 'Email sudah terdaftar!'
+			]
+		],
+		'password' => 'required|min_length[8]',
+		'confirmPassword' => [
+			'rules' => 'required|matches[password]',
+			'errors' => [
+				'matches' => 'Password tidak sama!'
+			]
+		]
+	];
 }
