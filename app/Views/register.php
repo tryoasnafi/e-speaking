@@ -1,7 +1,7 @@
 <?= $this->extend('layout/default') ?>
 
 <?= $this->section('title') ?>
-<title>Beranda &mdash; E-Speaking</title>
+<title>Register &mdash; E-Speaking</title>
 <?= $this->endSection() ?>
 
 <?= $this->section('content') ?>
@@ -11,32 +11,39 @@
             <div class="card-title text-center mt-5">
                 <h3>Mari Bergabung!</h3>
             </div>
-            <form action="POST" class="card-body">
-                <div class="form-group">
-                    <label for="NamaLengkap">Nama Lengkap</label>
-                    <input type="text" class="form-control" id="namalengkap" aria-describedby="namahelp" placeholder="Masukkan Nama Lengkap kamu">
-                </div>
-                <div class="form-group">
-                    <label for="Username">User Name</label>
-                    <input type="text" class="form-control" id="username" aria-describedby="usernamehelp" placeholder="Masukkan username kamu inginkan">
-                </div>
-                <div class="form-group">
-                    <label for="Email">Email</label>
-                    <input type="email" class="form-control" id="email" aria-describedby="emailhelp" placeholder="Masukkan email kamu, mis:masha@gmail.com">
-                </div>
-                <div class="form-group">
-                    <label for="Password">Password</label>
-                    <input type="password" class="form-control" id="password" aria-describedby="passwordhelp" placeholder="Masukkan kata sandi minimal 6 karakter">
-                </div>
-                <div class="form-group">
-                    <label for="Kpassword">Konfirmasi password</label>
-                    <input type="password" class="form-control" id="kpassword" aria-describedby="kpasswordhelp" placeholder="Masukkan ulang kata sandi">
-                </div>
+            <div class="card-body">
+                <?php if (session()->getFlashData('success')) : ?>
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        <strong>Sukses!</strong> <?= session()->getFlashData('success') ?>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                <?php endif; ?>
+                <form action="<?= base_url('register') ?>" method="POST" autocomplete="off">
+                    <?= csrf_field() ?>
+                    <div class="form-group">
+                        <label for="fullname">Nama Lengkap</label>
+                        <input type="text" class="form-control" id="fullname" name="name" name="fullname" aria-describedby="fullnameHelp" value="<?= old('name') ?>" placeholder="Masukkan Nama Lengkap kamu" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="Masukkan email kamu" value="<?= old('email') ?>" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" class="form-control" id="password" name="password" aria-describedby="passwordHelp" placeholder="Kata sandi minimal 8 karakter" min="8" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password2">Konfirmasi password</label>
+                        <input type="password" class="form-control" id="password2" name="confirmPassword" aria-describedby="confirmPasswordHelp" placeholder="Masukkan ulang kata sandi" required>
+                    </div>
 
-                <button class="btn btn-espeaking btn-block" type="submit">Daftar</button>
-            </form>
+                    <button class="btn btn-espeaking btn-block" type="submit">Daftar</button>
+                </form>
+            </div>
 
-            <span class="text-center mt-3 mb-5 text-secondary">Sudah Punya Akun? <a href="<?= base_url() ?>/masuk" class="text-espeaking"><strong>Masuk Sekarang</strong></a></span>
+            <span class="text-center mt-3 mb-5 text-secondary">Sudah Punya Akun? <a href="<?= base_url('login') ?>" class="text-espeaking"><strong>Masuk Sekarang</strong></a></span>
         </div>
     </div>
 </section>

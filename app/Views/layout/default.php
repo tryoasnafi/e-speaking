@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="<?= base_url() ?>/assets/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="<?= base_url() ?>/assets/css/custom.css" />
+    <link rel="stylesheet" href="<?= base_url('assets/css/bootstrap.min.css') ?>" />
+    <link rel="stylesheet" href="<?= base_url('assets/css/custom.css') ?>" />
     <?= $this->renderSection('title') ?>
 </head>
 
@@ -31,8 +31,8 @@
                     </li>
                 </ul>
                 <div class="ml-auto">
-                    <a href="<?= base_url() ?>/masuk" class="btn btn-outline-espeaking">Masuk</a>
-                    <a href="<?= base_url() ?>/daftar" class="btn btn-espeaking">Daftar</a>
+                    <a href="<?= base_url('login') ?>" class="btn btn-outline-espeaking">Masuk</a>
+                    <a href="<?= base_url('register') ?>" class="btn btn-espeaking">Daftar</a>
                 </div>
             </div>
         </div>
