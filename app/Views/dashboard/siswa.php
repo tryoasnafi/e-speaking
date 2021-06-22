@@ -9,5 +9,5 @@
 <?= $this->endSection() ?>
 
 <?= $this->section('content-body') ?>
-<h2>Kosong dulu ya dashboard user nya!</h2>
+<h2>Selamat Datang Siswa <?= session('user_name') ?>!</h2>
 <?= $this->endSection() ?>

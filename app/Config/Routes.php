@@ -43,6 +43,8 @@ $routes->get('/dashboard', 'Dashboard::index', ['filter' => 'authfilter']);
 $routes->get('/dashboard/chat', 'Chat::index', ['filter' => 'authfilter']);
 $routes->post('/dashboard/chat', 'Chat::store', ['filter' => 'authfilter']);
 $routes->get('/dashboard/materi', 'Materi::index', ['filter' => 'authfilter']);
+$routes->get('/dashboard/video', 'Video::index', ['filter' => 'authfilter']);
+$routes->post('/dashboard/video', 'Video::store', ['filter' => 'authfilter']);
 /*
  * --------------------------------------------------------------------
  * Additional Routing
