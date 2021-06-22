@@ -34,6 +34,8 @@ $routes->setAutoRoute(true);
 $routes->get('/', 'Home::index');
 $routes->get('/register', 'Register::index');
 $routes->post('/register', 'Register::store');
+$routes->get('/register/mentor', 'Register::index');
+$routes->post('/register/mentor', 'Register::store');
 $routes->get('/login', 'Auth::index');
 $routes->post('/login', 'Auth::login');
 $routes->get('/logout', 'Auth::logout');
