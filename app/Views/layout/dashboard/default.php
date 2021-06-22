@@ -1,10 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<?php
+$uri = service('uri');
+?>
+
 <head>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
-    <title>Blank Page &mdash; Stisla</title>
+    <?= $this->renderSection('title') ?>
 
     <!-- General CSS Files -->
     <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
@@ -15,6 +19,7 @@
     <!-- Template CSS -->
     <link rel="stylesheet" href="<?= base_url() ?>/template/assets/css/style.css">
     <link rel="stylesheet" href="<?= base_url() ?>/template/assets/css/components.css">
+    <link rel="stylesheet" href="<?= base_url() ?>/template/assets/css/custom.css">
 </head>
 
 <body>
@@ -160,7 +165,7 @@
                     </li>
                     <li class="dropdown"><a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
                             <img alt="image" src="<?= base_url() ?>/template/assets/img/avatar/avatar-1.png" class="rounded-circle mr-1">
-                            <div class="d-sm-none d-lg-inline-block">Hi, Ujang Maman</div>
+                            <div class="d-sm-none d-lg-inline-block">Hi, <?= session('user_name') ?> </div>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right">
                             <div class="dropdown-title">Logged in 5 min ago</div>
@@ -184,60 +189,20 @@
             <div class="main-sidebar">
                 <aside id="sidebar-wrapper">
                     <div class="sidebar-brand">
-                        <a href="index.html">Stisla</a>
+                        <a href="index.html">E-Speaking</a>
                     </div>
                     <div class="sidebar-brand sidebar-brand-sm">
-                        <a href="index.html">St</a>
+                        <a href="index.html">ES</a>
                     </div>
                     <ul class="sidebar-menu">
                         <li class="menu-header">Dashboard</li>
-                        <li class="nav-item dropdown">
-                            <a href="#" class="nav-link has-dropdown"><i class="fas fa-fire"></i><span>Dashboard</span></a>
-                            <ul class="dropdown-menu">
-                                <li><a class="nav-link" href="index-0.html">General Dashboard</a></li>
-                                <li><a class="nav-link" href="index.html">Ecommerce Dashboard</a></li>
-                            </ul>
-                        </li>
-                        <li class="menu-header">Starter</li>
-                        <li class="nav-item dropdown">
-                            <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-columns"></i> <span>Layout</span></a>
-                            <ul class="dropdown-menu">
-                                <li><a class="nav-link" href="layout-default.html">Default Layout</a></li>
-                                <li><a class="nav-link" href="layout-transparent.html">Transparent Sidebar</a></li>
-                                <li><a class="nav-link" href="layout-top-navigation.html">Top Navigation</a></li>
-                            </ul>
-                        </li>
-                        <li class="active"><a class="nav-link" href="blank.html"><i class="far fa-square"></i> <span>Blank Page</span></a></li>
-                        <li class="nav-item dropdown">
-                            <a href="#" class="nav-link has-dropdown"><i class="fas fa-th"></i> <span>Bootstrap</span></a>
-                            <ul class="dropdown-menu">
-                                <li><a class="nav-link" href="bootstrap-alert.html">Alert</a></li>
-                                <li><a class="nav-link" href="bootstrap-badge.html">Badge</a></li>
-                                <li><a class="nav-link" href="bootstrap-breadcrumb.html">Breadcrumb</a></li>
-                                <li><a class="nav-link" href="bootstrap-buttons.html">Buttons</a></li>
-                                <li><a class="nav-link" href="bootstrap-card.html">Card</a></li>
-                                <li><a class="nav-link" href="bootstrap-carousel.html">Carousel</a></li>
-                                <li><a class="nav-link" href="bootstrap-collapse.html">Collapse</a></li>
-                                <li><a class="nav-link" href="bootstrap-dropdown.html">Dropdown</a></li>
-                                <li><a class="nav-link" href="bootstrap-form.html">Form</a></li>
-                                <li><a class="nav-link" href="bootstrap-list-group.html">List Group</a></li>
-                                <li><a class="nav-link" href="bootstrap-media-object.html">Media Object</a></li>
-                                <li><a class="nav-link" href="bootstrap-modal.html">Modal</a></li>
-                                <li><a class="nav-link" href="bootstrap-nav.html">Nav</a></li>
-                                <li><a class="nav-link" href="bootstrap-navbar.html">Navbar</a></li>
-                                <li><a class="nav-link" href="bootstrap-pagination.html">Pagination</a></li>
-                                <li><a class="nav-link" href="bootstrap-popover.html">Popover</a></li>
-                                <li><a class="nav-link" href="bootstrap-progress.html">Progress</a></li>
-                                <li><a class="nav-link" href="bootstrap-table.html">Table</a></li>
-                                <li><a class="nav-link" href="bootstrap-tooltip.html">Tooltip</a></li>
-                                <li><a class="nav-link" href="bootstrap-typography.html">Typography</a></li>
-                            </ul>
-                        </li>
+                        <li class="<?= $uri->getSegment(1) == 'dashboard' && $uri->getSegment(2) == null ? 'active' : ''; ?>"><a class="nav-link" href="/dashboard"><i class="fas fa-home"></i> <span>Dashboard</span></a></li>
+                        <li class="<?= $uri->getSegment(2) == 'chat' ? 'active' : ''; ?>"><a class="nav-link" href="/dashboard/chat"><i class="fas fa-comment"></i> <span>Ruang Diskusi</span></a></li>
                     </ul>
 
                     <div class="mt-4 mb-4 p-3 hide-sidebar-mini">
                         <a href="https://getstisla.com/docs" class="btn btn-primary btn-lg btn-block btn-icon-split">
-                            <i class="fas fa-rocket"></i> Documentation
+                            <i class="fas fa-sign-out-alt"></i> Keluar
                         </a>
                     </div>
                 </aside>
@@ -247,10 +212,11 @@
             <div class="main-content">
                 <section class="section">
                     <div class="section-header">
-                        <h1>Blank Page</h1>
+                        <?= $this->renderSection('content-header') ?>
                     </div>
 
                     <div class="section-body">
+                        <?= $this->renderSection('content-body') ?>
                     </div>
                 </section>
             </div>
@@ -269,15 +235,18 @@
     <script src="<?= base_url() ?>/template/node_modules/jquery/js/jquery.js"></script>
     <script src="<?= base_url() ?>/assets/js/bootstrap.bundle.min.js"></script>
     <script src="<?= base_url() ?>/template/node_modules/jquery.nicescroll/jquery.nicescroll.min.js"></script>
+    <script src="<?= base_url() ?>/template/node_modules/moment/moment.js"></script>
     <script src="<?= base_url() ?>/template/assets/js/stisla.js"></script>
 
     <!-- JS Libraies -->
+    <!-- <script src="<?= base_url() ?>/template/assets/js/page/components-chat-box.js"></script> -->
 
     <!-- Template JS File -->
     <script src="<?= base_url() ?>/template/assets/js/scripts.js"></script>
     <script src="<?= base_url() ?>/template/assets/js/custom.js"></script>
 
     <!-- Page Specific JS File -->
+    <?= $this->renderSection('script') ?>
 </body>
 
 </html>
