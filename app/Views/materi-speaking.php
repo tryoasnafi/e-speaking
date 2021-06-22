@@ -184,7 +184,7 @@
             <div class="main-sidebar">
                 <aside id="sidebar-wrapper">
                     <div class="sidebar-brand">
-                        <a href="index.html">Stisla</a>
+                        <a href="/dashboard">E-Speaking</a>
                     </div>
                     <div class="sidebar-brand sidebar-brand-sm">
                         <a href="index.html">St</a>
@@ -207,7 +207,7 @@
                                 <li><a class="nav-link" href="layout-top-navigation.html">Top Navigation</a></li>
                             </ul>
                         </li>
-                        <li class="active"><a class="nav-link" href="blank.html"><i class="far fa-square"></i> <span>Blank Page</span></a></li>
+                        <li class="active"><a class="nav-link" href="blank.html"><i class="far fa-square"></i> <span>Page blank</span></a></li>
                         <li class="nav-item dropdown">
                             <a href="#" class="nav-link has-dropdown"><i class="fas fa-th"></i> <span>Bootstrap</span></a>
                             <ul class="dropdown-menu">
@@ -244,19 +244,44 @@
             </div>
 
             <!-- Main Content -->
-            <div class="main-content">
-                <section class="section">
-                    <div class="section-header">
-                        <h1>Blank Page</h1>
-                    </div>
 
-                    <div class="section-body">
-                    </div>
-                </section>
-            </div>
+            <body>
+                <div class="main-content">
+                    <section class="section">
+                        <div class="section-header">
+                            <h1>Hallo Selamat Datang!! Berikut Materi Public Speaking</h1>
+
+                        </div>
+
+                        <div class="section-body">
+                            <div class="container-md ">
+                                <div class="row">
+
+                                    <div class="card shadow">
+                                        <div class="card-body">
+
+                                            <?php
+                                            foreach ($materi as $m) {
+                                            ?>
+                                                <div class="col my-5" style="color: #2d3e50;">
+                                                    <img class="my-3" src=/assets/img/<?= $m['img']; ?> width="100%" alt="">
+                                                    <?= $m['materi']; ?>
+                                                </div>
+                                            <?php
+                                            }
+                                            ?>
+                                        </div>
+                                    </div>
+                                    <?= $pager->links('materi', 'materi_pagination') ?>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </body>
             <footer class="main-footer">
                 <div class="footer-left">
-                    Copyright &copy; 2018 <div class="bullet"></div> Design By <a href="https://nauval.in/">Muhamad Nauval Azhar</a>
+                    Copyright &copy; 2021 <div class="bullet"></div> Design By <a href="">E-Speaking</a>
                 </div>
                 <div class="footer-right">
                     2.3.0

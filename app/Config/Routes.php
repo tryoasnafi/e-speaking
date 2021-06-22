@@ -40,6 +40,7 @@ $routes->get('/login', 'Auth::index');
 $routes->post('/login', 'Auth::login');
 $routes->get('/logout', 'Auth::logout');
 $routes->get('/dashboard', 'Dashboard::index');
+$routes->get('/materi', 'materi::index');
 
 /*
  * --------------------------------------------------------------------
