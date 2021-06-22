@@ -198,6 +198,7 @@ $uri = service('uri');
                         <li class="menu-header">Dashboard</li>
                         <li class="<?= $uri->getSegment(1) == 'dashboard' && $uri->getSegment(2) == null ? 'active' : ''; ?>"><a class="nav-link" href="/dashboard"><i class="fas fa-home"></i> <span>Dashboard</span></a></li>
                         <li class="<?= $uri->getSegment(2) == 'chat' ? 'active' : ''; ?>"><a class="nav-link" href="/dashboard/chat"><i class="fas fa-comment"></i> <span>Ruang Diskusi</span></a></li>
+                        <li class="<?= $uri->getSegment(2) == 'materi' ? 'active' : ''; ?>"><a class="nav-link" href="<?= base_url('/dashboard/materi') ?>"><i class="fas fa-book-open"></i> <span>Materi Public Speaking</span></a></li>
                     </ul>
 
                     <div class="mt-4 mb-4 p-3 hide-sidebar-mini">

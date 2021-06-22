@@ -42,7 +42,7 @@ $routes->get('/logout', 'Auth::logout');
 $routes->get('/dashboard', 'Dashboard::index', ['filter' => 'authfilter']);
 $routes->get('/dashboard/chat', 'Chat::index', ['filter' => 'authfilter']);
 $routes->post('/dashboard/chat', 'Chat::store', ['filter' => 'authfilter']);
-
+$routes->get('/dashboard/materi', 'Materi::index', ['filter' => 'authfilter']);
 /*
  * --------------------------------------------------------------------
  * Additional Routing
