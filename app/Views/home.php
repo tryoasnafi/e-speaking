@@ -12,7 +12,8 @@
 			<h2>Selamat Datang di E-Speaking</h2>
 			<p class="mt-2">Sebuah Ruang Belajar <em>public speaking</em> untuk membantumu lebih percaya diri dalam berbicara di depan <em>audiens</em></p>
 			<div class="mt-2">
-				<a href="<?= base_url('register') ?>" class="btn btn-espeaking">Daftar Sekarang</a>
+				<a href="/register/mentor" class="btn btn-espeaking">Daftar jadi Mentor</a>
+				<a href="/register" class="btn btn-outline-espeaking">Gabung jadi Siswa</a>
 			</div>
 		</div>
 		<div class="col-md-6 order-1 order-md-2 p-0">
