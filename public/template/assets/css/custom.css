@@ -1,0 +1,20 @@
+/**
+ *
+ * You can write your CSS code here, DO NOT touch the default JavaScript file
+ * because it will make it harder for you to update.
+ * 
+ */
+
+/*# sourceMappingURL=custom.css.map */
+.body {
+  margin: 0;
+  padding: 0;
+}
+
+.bg-eso-light {
+  background-color: #FFFFFF !important;
+}
+
+.bg-eso-dark {
+  background-color: #2D3E50 !important;
+}
