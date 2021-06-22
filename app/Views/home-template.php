@@ -8,7 +8,7 @@
 
     <!-- General CSS Files -->
     <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
-    <link rel="stylesheet" href="<?= base_url() ?>/template/node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="<?= base_url() ?>/assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="<?= base_url() ?>/template/node_modules/@fortawesome/fontawesome-free/css/all.min.css">
     <!-- CSS Libraries -->
 
@@ -422,11 +422,9 @@
     </div>
 
     <!-- General JS Scripts -->
-    <script src="<?= base_url() ?>/template/node_modules/jquery/dist/jquery.min.js"></script>
-    <script src="<?= base_url() ?>/template/node_modules/popper.js/dist/popper.min.js" type="module"></script>
-    <script src="<?= base_url() ?>/template/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="<?= base_url() ?>/template/node_modules/jquery.nicescroll/dist/jquery.nicescroll.min.js"></script>
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script> -->
+    <script src="<?= base_url() ?>/template/node_modules/jquery/js/jquery.js"></script>
+    <script src="<?= base_url() ?>/assets/css/bootstrap.bundle.min.css"></script>
+    <script src="<?= base_url() ?>/template/node_modules/jquery.nicescroll/jquery.nicescroll.min.js"></script>
     <script src="<?= base_url() ?>/template/assets/js/stisla.js"></script>
 
     <!-- JS Libraies -->
