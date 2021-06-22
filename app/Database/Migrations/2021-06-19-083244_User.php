@@ -28,8 +28,8 @@ class User extends Migration
 				'constraint' => '255',
 			],
 			'role' => [
-				'type' => 'VARCHAR',
-				'constraint' => '255',
+				'type' => 'ENUM',
+				'constraint' => ['siswa', 'mentor', 'admin'],
 			],
 			'created_at' => [
 				'type' => 'DATETIME',
