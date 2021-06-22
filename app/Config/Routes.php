@@ -39,7 +39,9 @@ $routes->post('/register/mentor', 'Register::store');
 $routes->get('/login', 'Auth::index');
 $routes->post('/login', 'Auth::login');
 $routes->get('/logout', 'Auth::logout');
-$routes->get('/dashboard', 'Dashboard::index');
+$routes->get('/dashboard', 'Dashboard::index', ['filter' => 'authfilter']);
+$routes->get('/dashboard/chat', 'Chat::index', ['filter' => 'authfilter']);
+$routes->post('/dashboard/chat', 'Chat::store', ['filter' => 'authfilter']);
 
 /*
  * --------------------------------------------------------------------
