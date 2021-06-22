@@ -21,8 +21,10 @@ class Auth extends BaseController
             $verify_pass = password_verify($password, $data[0]->password);
             if ($verify_pass) {
                 $ses_data = [
+                    'user_id'       => $data[0]->id,
                     'user_name'     => $data[0]->name,
                     'user_email'    => $data[0]->email,
+                    'user_role'     => $data[0]->role,
                     'logged_in'     => TRUE
                 ];
                 $session->set($ses_data);
@@ -39,8 +41,8 @@ class Auth extends BaseController
 
     public function logout()
     {
-        // session()->destroy();
-        // session()->stop();
+        session()->stop();
+        session()->destroy();
         return redirect()->to('/login');
     }
 }

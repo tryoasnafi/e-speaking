@@ -6,15 +6,6 @@
  */
 
 /*# sourceMappingURL=custom.css.map */
-.body {
-  margin: 0;
-  padding: 0;
-}
-
-.bg-eso-light {
-  background-color: #FFFFFF !important;
-}
-
-.bg-eso-dark {
-  background-color: #2D3E50 !important;
+.chat-details {
+  margin: 0 !important;
 }
